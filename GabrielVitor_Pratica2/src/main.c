@@ -26,8 +26,14 @@ int main(){
         printf("|      Digite 0->Sair        |\n");
         printf("______________________________\n");
 
+
+       
 		//switch(U){
         //case '1':
+        printf("\nEscolha uma opcao\n");
+         scanf("%d", &U);
+		
+
     if (U==1)
     {
         
@@ -47,7 +53,14 @@ int main(){
 
        }else if(U==3){
 
-        Resposta2A();
+        
+
+            char exp[50];
+            printf("\t______________________________\n");
+            printf("\tDigite um expressao: ");
+            scanf("%s49[^\n]", exp);
+            printf("\nExpressao: %s\nRetorno: %d\n", exp, identifica_formacao(exp));
+            printf("\t______________________________\n");
 
              U == 1; 
             
@@ -97,7 +110,7 @@ int main(){
               //return  break;
 
         //default:
-            }while (U == 0);
+            }while (U != 0);
             
             
             
