@@ -28,13 +28,13 @@ void imprimir_lista(L1 *l){
 	}
 }
 
-void Lista_dois_vazia(L2 *l){
+void lista_dois_vazia(L2 *l){
 
 	l->primeiro = 0;
 	l->ultimo  = 0;
 }
 
-void Lista_dois_Insere(L2 *l, Valor d){
+void inserir_lista_dois(L2 *l, Valor d){
 
 	if (l->ultimo >= Tamanho_Maximo2){
 
@@ -47,7 +47,7 @@ void Lista_dois_Insere(L2 *l, Valor d){
 	}
 }
 
-void Imprimir_Lista_dois(L2 *l1, L2 *l2){
+void imprimir_lista_dois(L2 *l1, L2 *l2){
 
     for(int i = l1->primeiro; i < l1->ultimo; i++)
 
@@ -56,7 +56,7 @@ void Imprimir_Lista_dois(L2 *l1, L2 *l2){
 	printf("\n");
 }
 
-void Lista_dois(L2 *l1, L2 *l2){
+void lista_dois(L2 *l1, L2 *l2){
 
 	int aux1 = 0;
 
@@ -94,7 +94,7 @@ void Swap(Valor *a, Valor *b){
 	*b  = aux;
 }
 
-void Lista_dois_Remove(L2 *l){
+void lista_dois_Remove(L2 *l){
 
 	bool ok = false;
 
@@ -120,7 +120,7 @@ void Lista_dois_Remove(L2 *l){
 
 //1a
 
-void LetraA(L1 *par, L1 *imp, L1 *conc){
+void letraA(L1 *par, L1 *imp, L1 *conc){
 
 	int aux1 = 0;
 
@@ -132,7 +132,7 @@ void LetraA(L1 *par, L1 *imp, L1 *conc){
 		d.val = rand()%99;
 		if(d.val % 2 == 0 && d.val != 0){
 
-			ListInsert(par, d);
+			inserir_lista(par, d);
 			aux1++;
 		}
 	}
@@ -144,7 +144,7 @@ void LetraA(L1 *par, L1 *imp, L1 *conc){
 		d.val = rand()%99;
 		if(d.val % 2 == 1 && d.val != 0){
 
-			ListInsert(imp, d);
+			inserir_lista(imp, d);
 			aux2++;
 		}
 	}
@@ -198,7 +198,7 @@ void letraB(L2 *l1, L2 *l2, L2 *l3, L2 *l4, int aleatorio){
 		printf("Empate!");
 	}
 	
-	imprimir_Lista_dois(l3,l4);
+	imprimir_lista_dois(l3,l4);
 }
 
 void Resposta1A(){
@@ -227,13 +227,13 @@ void Resposta1B(){
 
 	L2 l1, l2, l3, l4;
 
-			Lista_dois_vazia(&l1);
-			Lista_dois_vazia(&l2);
-			Lista_dois_vazia(&l3);
-			Lista_dois_vazia(&l4);
-			Lista_dois(&l1, &l2);
+			lista_dois_vazia(&l1);
+			lista_dois_vazia(&l2);
+			lista_dois_vazia(&l3);
+			lista_dois_vazia(&l4);
+			lista_dois(&l1, &l2);
 			printf("L1 & L2: \n\n");
-			imprimir_Lista_dois(&l1, &l2);
+			imprimir_lista_dois(&l1, &l2);
 
 			srand((unsigned)time(NULL));
 			int aleatorio = (rand()%12)+1;

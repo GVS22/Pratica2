@@ -125,8 +125,8 @@ int combinacao(int n, int p){
     int c;
     int aux;
     aux = n - p;
-    c = fat(n);
-    c = c/(fat(p)*fat(aux));
+    c = fatorial(n);
+    c = c/(fatorial(p)*fatorial(aux));
 
     return c;
 }
@@ -141,14 +141,14 @@ void Binomio(int n, char x, char y, fila3 *res){
             sprintf(str, "%d(%c^%d * %c^%d) + ", combinacao(n, j), x,n-j, y, j);
             Valor3 r;
             r.result = str;
-            EnfileiraRes(res, r);
+            enfileira_fila_tres(res, r);
         }else if(j == n){
 
             char *str = malloc(sizeof(str));
             sprintf(str, "%d(%c^%d * %c^%d)\n", combinacao(n, j), x,n-j, y, j);
             Valor3 r;
             r.result = str;
-            EnfileiraRes(res, r);    
+            enfileira_fila_tres(res, r);    
         }
     }
 }
@@ -194,9 +194,9 @@ void Resposta3A(){
             d.k = i;
             d.x = 'a';
             d.y = 'b';
-            Enfileira(&f, d);   
+            enfileira(&f, d);   
         }
-        FilaDImprime(&f);
+        imprimir_fila(&f);
         printf("\n");
         No1 *aux;
         aux = f.primeiro->prox;
@@ -204,11 +204,11 @@ void Resposta3A(){
             Binomio(aux->data.k, aux->data.x, aux->data.y, &res);
             aux = aux->prox;
         }
-        FilaResImprime(&res);
+        imprimir_fila_tres(&res);
 }
 
 void Resposta3B(){
-    
+
     fila2 f;
         fila_dois_vazia(&f);
         srand((unsigned)time(NULL));
@@ -218,9 +218,9 @@ void Resposta3B(){
             for (int j = 0; j < 5; j++){
                 b.peso[j] = (rand()%5)+1;
             }
-            EnfileiraB(&f, b);
+            enfileira_fila_dois(&f, b);
         }
-        FilaBImprime(&f);
+        imprimir_fila_dois(&f);
         printf("\n");
 
         No2 *x;
